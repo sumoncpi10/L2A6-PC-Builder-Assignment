@@ -19,7 +19,7 @@ async function run(req, res) {
 
     const productCollection = client.db('pcbuilder').collection('products');
     const product = await productCollection.findOne({ id:partId });
-    console.log(product);
+    // console.log(product);
     if (!product) {
       return res.status(404).json({ error: "Product not found" });
     }

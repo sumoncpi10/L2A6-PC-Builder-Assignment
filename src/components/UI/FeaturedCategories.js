@@ -1,4 +1,4 @@
-// AllProducts.js
+// allFeatureParts.js
 
 import React from "react";
 import { Card, Col, Row } from "antd";
@@ -11,7 +11,7 @@ import {
 } from "@ant-design/icons";
 import Link from "next/link";
 
-const FeaturedCategories = ({ allProducts }) => {
+const FeaturedCategories = ({ allFeatureParts }) => {
   const { Meta } = Card;
 
   return (
@@ -26,7 +26,7 @@ const FeaturedCategories = ({ allProducts }) => {
         #Featured Categories
       </h1>
       <Row gutter={[16, 16]}>
-        {allProducts?.map((part) => (
+        {allFeatureParts?.map((part) => (
           <Col key={part.id} xs={24} sm={12} md={8} lg={8}>
             <Card
               hoverable

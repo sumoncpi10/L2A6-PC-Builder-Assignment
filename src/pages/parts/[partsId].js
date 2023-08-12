@@ -145,31 +145,29 @@ const columns = [
 
 export default PartsDetails;
 
-export const getStaticPaths = async() => {
 
-    const res = await fetch(`https://pcbuilderserver-eight.vercel.app/api/products`)
+export async function getStaticPaths() {
+    const res = await fetch('https://pcbuilderserver-eight.vercel.app/api/products');
     const allProducts = await res.json();
-    console.log(allProducts.data);
 
     const paths = allProducts?.data?.map(part => ({
-        params: {partsId:part.id}
-    }))
+        params: { partsId: part.id.toString() } // Convert id to string
+    }));
 
-    return {paths, fallback:false}
+    return { paths, fallback: false };
 }
-export const getStaticProps = async(context) => {
-  const { params } = context;
-  // console.log(params.id);
-  const url = `https://pcbuilderserver-eight.vercel.app/api/parts/${params?.partsId}`;
-  // console.log(url);
-    const res = await fetch(url)
+
+export async function getStaticProps(context) {
+    const { params } = context;
+    const url = `https://pcbuilderserver-eight.vercel.app/api/parts/${params?.partsId}`;
+    
+    const res = await fetch(url);
     const data = await res.json();
-    console.log(data);
 
     return {
         props: {
-            part:data
+            part: data
         },
-        revalidate:30
-    }
+        revalidate: 30
+    };
 }

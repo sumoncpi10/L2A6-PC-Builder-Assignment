@@ -9,7 +9,7 @@ import {
 import Image from "next/image";
 import AllProducts from '@/components/UI/AllProducts';
 const PartsDetails = ({ allProducts }) => {
-    console.log(allProducts);
+    // console.log(allProducts);
     return (
  
       <AllProducts allProducts={allProducts}></AllProducts>

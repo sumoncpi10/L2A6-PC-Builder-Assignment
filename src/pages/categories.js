@@ -30,7 +30,7 @@ const Categories = () => {
    
   ]
 
-console.log(category);
+// console.log(category);
     return (
         <div>
              <FeaturedCategories allProducts={category}></FeaturedCategories>

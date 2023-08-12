@@ -1,6 +1,6 @@
 const fetchData = async (category) => {
   try {
-    const res = await fetch(`http://localhost:5000/api/products?category=${category}`);
+    const res = await fetch(`https://pcbuilderserver-eight.vercel.app/api/products?category=${category}`);
     const data = await res.json();
     return data;
   } catch (error) {
@@ -8,6 +8,7 @@ const fetchData = async (category) => {
     return [];
   }
 };
+
 
 const CategoriesPage = ({CategoriesParts}) => {
     console.log(CategoriesParts);
@@ -20,7 +21,17 @@ const CategoriesPage = ({CategoriesParts}) => {
 
 export default CategoriesPage;
 
-export async function getStaticProps(context) {
+// export async function getStaticProps(context) {
+//   const { category } = context.params;
+//   const CategoriesParts = await fetchData(category);
+
+//   return {
+//     props: {
+//       CategoriesParts,
+//     },
+//   };
+// }
+export async function getServerSideProps(context) {
   const { category } = context.params;
   const CategoriesParts = await fetchData(category);
 

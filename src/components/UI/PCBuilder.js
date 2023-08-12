@@ -1,4 +1,4 @@
-// AllProducts.js
+// allPcParts.js
 
 import React from "react";
 import { Button, Card, Col, Row, notification } from "antd";
@@ -12,7 +12,7 @@ import { FileAddOutlined,DeleteFilled } from '@ant-design/icons';
 import { Avatar } from 'antd';
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { removeFromCart, removeOne } from "@/redux/features/cart/cartSlice";
-const PCBuilder = ({ allProducts }) => {
+const PCBuilder = ({ allPcParts }) => {
   const { Meta } = Card;
   const { products } = useAppSelector((state) => state.cart);
   console.log(products);
@@ -37,7 +37,7 @@ const PCBuilder = ({ allProducts }) => {
         #Build Your PC
       </h1>
       <Row gutter={[16, 16]} align="middle">
-        {allProducts?.map((part) => (
+        {allPcParts?.map((part) => (
           <Col key={part.id} xs={24} sm={24} md={24} lg={24} align="middle">
           <Card
     style={{

@@ -3,7 +3,7 @@ import FeaturedCategories from "@/components/UI/FeaturedCategories";
 import { Col, Row } from "antd";
 import Head from "next/head";
 const HomePage = ({ allProducts }) => {
-  console.log(allProducts);
+  // console.log(allProducts);
       const category=[
     {
       "category": "CPU-Processor",
