@@ -13,10 +13,10 @@ const LoginPage = () => {
         <h3>LOGIN</h3>
         <div className={styles.social_icons}>
           <GoogleOutlined onClick={()=>signIn("google",{
-            callbackUrl:"https://pcbuildersumon.vercel.app"
+            callbackUrl:"/https://pcbuildersumon.vercel.app/"
           })}/>
           <GithubOutlined onClick={()=>signIn("github",{
-            callbackUrl:"https://pcbuildersumon.vercel.app"
+            callbackUrl:"/https://pcbuildersumon.vercel.app/"
           })}/>
         </div>
         <hr />
