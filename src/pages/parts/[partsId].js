@@ -147,7 +147,7 @@ export default PartsDetails;
 
 
 export async function getStaticPaths() {
-    const res = await fetch('http://localhost:3000/api/products');
+    const res = await fetch('https://pcbuilderserver-eight.vercel.app/api/products');
     const allProducts = await res.json();
 
     const paths = allProducts?.data?.map(part => ({
@@ -159,7 +159,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
     const { params } = context;
-    const url = `http://localhost:3000/api/parts/${params?.partsId}`;
+    const url = `https://pcbuilderserver-eight.vercel.app/api/parts/${params?.partsId}`;
     
     const res = await fetch(url);
     const data = await res.json();
