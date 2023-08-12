@@ -38,7 +38,7 @@ const PcBuilder = () => {
 // console.log(category);
     return (
         <div>
-             <PCBuilder allProducts={category}></PCBuilder>
+             <PCBuilder allPcParts={category}></PCBuilder>
         </div>
     );
 };

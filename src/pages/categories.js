@@ -33,7 +33,7 @@ const Categories = () => {
 // console.log(category);
     return (
         <div>
-             <FeaturedCategories allProducts={category}></FeaturedCategories>
+             <FeaturedCategories allFeatureParts={category}></FeaturedCategories>
         </div>
     );
 };
